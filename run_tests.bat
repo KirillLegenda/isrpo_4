@@ -1,0 +1,3 @@
+@echo off
+echo Запуск тестов на Windows...
+python -m unittest discover -s lab4

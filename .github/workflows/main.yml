@@ -1,0 +1,33 @@
+name: Unit Tests CI
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    #для Ubuntu
+    - name: Make bash script executable (Ubuntu)
+      if: runner.os == 'Linux'
+      run: chmod +x run_tests.sh
+
+    - name: Run unit tests on Ubuntu
+      if: runner.os == 'Linux'
+      run: ./run_tests.sh
+
+    #для Windows
+    - name: Run unit tests on Windows
+      if: runner.os == 'Windows'
+      run: .\run_tests.bat
