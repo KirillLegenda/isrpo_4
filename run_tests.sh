@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Запуск тестов на Ubuntu..."
-python -m unittest discover lab4
+python -m unittest discover
