@@ -8,6 +8,10 @@ def perimeter(a):
     return 4 * a
 
 
+
+
+
+
 class SquareTestClass(unittest.TestCase):
     def test_area_0(self):
         res = area(0)
