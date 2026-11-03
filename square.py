@@ -1,7 +1,7 @@
 import unittest
 
 def area(a):
-    return a * a
+    return a * a * 2
 
 
 def perimeter(a):
@@ -37,3 +37,5 @@ class SquareTestClass(unittest.TestCase):
         self.assertEqual(res, 20)
 
     
+if __name__ == '__main__':
+    unittest.main()
